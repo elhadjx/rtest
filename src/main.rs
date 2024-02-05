@@ -41,8 +41,8 @@ fn main() {
 
     /*for ip in IPs {
         match ping_ip_address(ip, port) {
-            Ok(_) => println!("{}:{} is reachable", ip, port),
-            Err(err) => println!("{}:{} is not reachable", ip, port),
+            Ok(_) => println!("{}:{} is ALIVE", ip, port),
+            Err(err) => println!("{}:{} is DEAD", ip, port),
         }
     }*/
 
@@ -53,8 +53,8 @@ fn main() {
         // Spin up another thread
         children.push(thread::spawn(move || {
             match ping_ip_address(ip, port) {
-                Ok(_) => println!("{}:{} is reachable", ip, port),
-                Err(err) => println!("{}:{} is not reachable", ip, port),
+                Ok(_) => println!("{}:{} is ALIVE", ip, port),
+                Err(err) => println!("{}:{} is DEAD", ip, port),
             }
         }));
     }
